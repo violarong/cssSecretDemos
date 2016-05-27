@@ -1,6 +1,14 @@
 ##36.Intrinsic sizing
 >主要知识点：fill, max-content, min-content, fit-content
 
+##38.Styling by sibling count
+>主要知识点：:first-child:nth-last-child
+>:nth-last-child，类似于:nth-child，从后往前选择元素。
+>语法：element:nth-last-child(an + b) {/*规则*/}
+>tr:nth-last-child(-n+4)，匹配表格中的最后四行
+
+问题：需要根据节点兄弟姐妹的个数，设置不同的样式。
+
 
 ##39.Fluid background, fixed content
 >主要知识点：calc()
