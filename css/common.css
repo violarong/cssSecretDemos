@@ -10,6 +10,7 @@ body{word-wrap:break-word;font:12px/1.14 "microsoft yahei","STHeiti",arial,"sims
 textarea,input,button,select{outline:0;font-size:inherit;line-height:inherit;color:inherit;font-family:inherit;}
 textarea{resize:none;}
 a,button{cursor:pointer;}
+summary{display:block;}
 
 .g-doc{width:100%;position:relative;}
 /* 头部标题和知识点说明 */

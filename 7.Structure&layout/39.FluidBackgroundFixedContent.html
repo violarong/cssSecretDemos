@@ -3,22 +3,80 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>39.Fluid background, fixed content</title>
+<link rel="stylesheet" type="text/css" href="../css/common.css">
 <style type="text/css">
-/* 知识点说明样式 */
-.m-knowledge{color:#f15b47;margin-bottom:30px;}
-
-.box{border:1px solid #ddd;margin-bottom:10px;}
-.box li{display:inline-block;width:40px;line-height:40px;margin-right:10px;background-color:#ddd;text-align:center;}
-.tit{padding:15px 0 0 15px;}
-
+.m-footer{background-color:#45b095;height:300px;}
+.m-footer .wrapper{
+    max-width:300px;
+    margin:1em auto;
+    height:100%;
+}
+.m-footer .wrapper .content{
+    background: #9e9cf6;
+    height: 100%;
+    color: white;
+}
+.m-footer1{
+    padding: 0 1em;
+    padding: 0 calc(50% - 150px);
+    background: #45b095;
+    height:300px;
+}
+.m-footer1 .content{
+    background: #9e9cf6;
+    height: 100%;
+    color: white;
+}
 </style>
 </head>
-<body>
-    <h2>39.Fluid background, fixed content</h2>
-    <div class="m-knowledge">
-        <p>主要知识点：<span>:first-child:nth-last-child</span></p>
-    </div>
-    <div class="box">
-    </div>
+<body class="g-doc">
+    <section class="m-knowledge">
+        <h2>39.Fluid background, fixed content</h2>
+        <summary>主要知识点：<span>:first-child:nth-last-child</span></summary>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>常见做法</summary>
+            <div class="m-footer">
+                <div class="wrapper">
+                    <div class="content">这是内容</div>
+                </div>
+            </div>
+        </div>
+        <div class="code">
+            .m-footer{background-color:#45b095;height:300px;}
+            .m-footer .wrapper{
+                max-width:300px;
+                margin:1em auto;
+                height:100%;
+            }
+            .m-footer .wrapper .content{
+                background: #9e9cf6;
+                height: 100%;
+                color: white;
+            }
+        </div>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>只使用一个html标签的做法</summary>
+            <div class="m-footer1">
+                <div class="content">这是内容</div>
+            </div>
+        </div>
+        <div class="code">
+            .m-footer1{
+                padding: 0 1em;
+                padding: 0 calc(50% - 150px);
+                background: #45b095;
+                height:300px;
+            }
+            .m-footer1 .content{
+                background: #9e9cf6;
+                height: 100%;
+                color: white;
+            }
+        </div>
+    </section>
 </body>
 </html>
