@@ -9,6 +9,7 @@
 
 问题：需要根据节点兄弟姐妹的个数，设置不同的样式。
 
+[demo](http://violarong.github.io/cssSecretDemos/7.Structure&layout/38.StylingBySiblingCount.html)
 
 ##39.Fluid background, fixed content
 >主要知识点：calc()
@@ -44,4 +45,4 @@ footer {
 }
 ```
 
-[demo](./39.FluidBackgroundFixedContent.html)
+[demo](http://violarong.github.io/cssSecretDemos/7.Structure&layout/39.FluidBackgroundFixedContent.html)

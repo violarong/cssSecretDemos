@@ -1,0 +1,29 @@
+/* 重置类 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,button,textarea,p,blockquote,th,td{padding:0;margin:0;}
+fieldset,img,html,body,iframe{border:0;}
+table{border-collapse:collapse;border-spacing:0;table-layout:fixed;}
+li{list-style:none;}
+em,i,small,caption,th{font-weight:normal;font-style:normal;font-size:100%;}
+h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;font-size:100%;}
+caption,th{text-align:left;}
+body{word-wrap:break-word;font:12px/1.14 "microsoft yahei","STHeiti",arial,"simsun";color:#333;background:#fff;}
+textarea,input,button,select{outline:0;font-size:inherit;line-height:inherit;color:inherit;font-family:inherit;}
+textarea{resize:none;}
+a,button{cursor:pointer;}
+
+.g-doc{width:100%;position:relative;}
+/* 头部标题和知识点说明 */
+.m-knowledge{padding:10px;}
+.m-knowledge h2{font-size:24px;margin-bottom:15px;}
+.m-knowledge summary{font-size:16px;padding: 4px 8px;border-left: 3px solid yellowgreen;margin-bottom:10px;}
+
+.m-code{height:400px;font-size:14px;border-top:1px solid #ddd;border-bottom:1px solid #ddd;margin-bottom:10px;color:#666;}
+.m-code:after{clear:both;display:block;visibility:hidden;height:0;overflow:hidden;content:".";}
+.m-code .livedemo,.m-code .code{width:50%;box-sizing:border-box;height:100%;padding:10px;}
+.m-code .livedemo{float:left;position:relative;}
+.m-code .livedemo .m-demo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+.m-code .code{font-family: Consolas, Monaco, monospace;white-space:pre;overflow-y:scroll;float:right;background-color:#ffe;}
+.m-code summary{padding: 2px 8px;border-left: 2px solid #FF9800;margin-bottom:10px;}
+
+/* 功能类 */
+.f-cb:after{clear:both;display:block;visibility:hidden;height:0;overflow:hidden;content:".";}

@@ -3,13 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>38.Styleing By Sibling Count</title>
+<link rel="stylesheet" type="text/css" href="../css/common.css">
 <style type="text/css">
-/* 知识点说明样式 */
-.m-knowledge{color:#f15b47;margin-bottom:30px;}
-
-.m-box{border:1px solid #ddd;margin-bottom:10px;}
-.m-box li{display:inline-block;width:40px;line-height:40px;margin-right:10px;background-color:#ddd;text-align:center;}
-.m-box .tit{padding:15px 0 0 15px;}
+.m-demo ul{margin-bottom:10px;}
+.m-demo li{display:inline-block;width:40px;line-height:40px;margin-right:10px;background-color:#ddd;text-align:center;}
 
 .m-onlychild li:first-child:nth-last-child(1){
     background-color: #36a8f4;
@@ -37,111 +34,184 @@
 }
 </style>
 </head>
-<body>
-    <h2>38.Styleing By Sibling Count</h2>
-    <div class="m-knowledge">
-        <p>主要知识点：<span>:first-child:nth-last-child</span></p>
-    </div>
-    <div class="m-box">
-        <div class="tit">平常情况</div>
-        <ul class="normal">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-        </ul>
-    </div>
-    <div class="m-box m-onlychild">
-        <div class="tit">只有一个节点</div>
-        <ul>
-            <li>1</li>
-        </ul>
-    </div>
-    <div class="m-box m-demo1">
-        <div class="tit">只有4个节点的选中</div>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-        </ul>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-        </ul>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-        </ul>
-    </div>
-    <div class="m-box m-demo2">
-        <div class="tit">大于等于4个节点的都选中</div>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-        </ul>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-        </ul>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-        </ul>
-    </div>
-    <div class="m-box m-demo3">
-        <div class="tit">小于等于4个节点的选中</div>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-        </ul>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-        </ul>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-        </ul>
-    </div>
-    <div class="m-box m-demo4">
-        <div class="tit">不管几个节点，都选中</div>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-        </ul>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-        </ul>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-        </ul>
-    </div>
+<body class="g-doc">
+    <section class="m-knowledge">
+        <h2>38.Styleing By Sibling Count</h2>
+        <summary>主要知识点：<span>:first-child:nth-last-child</span></summary>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>平常情况</summary>
+            <div class="m-demo">
+                <ul class="normal">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+            </div>
+        </div>
+        <div class="code">
+            li{
+                display:inline-block;
+                width:40px;
+                line-height:40px;
+                margin-right:10px;
+                background-color:#ddd;
+                text-align:center;
+            }
+        </div>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>只有一个节点</summary>
+            <div class="m-demo m-onlychild">
+                <ul>
+                    <li>1</li>
+                </ul>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                </ul>
+            </div>
+        </div>
+        <div class="code">
+            li:first-child:nth-last-child(1){
+                background-color: #36a8f4;
+                color:white;
+            }
+        </div>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>只有4个节点的选中</summary>
+            <div class="m-demo m-demo1">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                </ul>
+            </div>
+        </div>
+        <div class="code">
+            li:first-child:nth-last-child(4),
+            li:first-child:nth-last-child(4) ~ li {
+                background-color: #36a8f4;
+                color:white;
+            }
+        </div>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>大于等于4个节点的都选中</summary>
+            <div class="m-demo m-demo2">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                </ul>
+            </div>
+        </div>
+        <div class="code">
+            li:first-child:nth-last-child(n+4),
+            li:first-child:nth-last-child(n+4) ~ li {
+                background-color: #36a8f4;
+                color:white;
+            }
+        </div>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>小于等于4个节点的选中</summary>
+            <div class="m-demo m-demo3">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+            </div>
+        </div>
+        <div class="code">
+            li:first-child:nth-last-child(n+4),
+            li:first-child:nth-last-child(n+4) ~ li {
+                background-color: #36a8f4;
+                color:white;
+            }
+        </div>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>不管几个节点，都选中</summary>
+            <div class="m-demo m-demo4">
+                <div class="tit"></div>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+            </div>
+        </div>
+        <div class="code">
+            li:first-child:nth-last-child(n+2):nth-last-child(-n+6),
+            li:first-child:nth-last-child(n+2):nth-last-child(-n+6) ~ li {
+                background-color: #36a8f4;
+                color:white;
+            }
+        </div>
+    </section>
 </body>
 </html>
