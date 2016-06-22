@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>45.Typing animation</title>
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<style type="text/css">
+@keyframes typing {
+    from { width: 0 }
+}
+@keyframes caret {
+    50% { border-color: currentColor; }
+}
+.m-typing{
+}
+.m-typing h1 {
+    width: 15ch; /* Width of text */
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .05em solid transparent;
+    animation: typing 6s steps(15),caret 1s steps(1) infinite;
+}
+</style>
+</head>
+<body class="g-doc">
+    <section class="m-knowledge">
+        <h2>45.Typing animation</h2>
+        <summary>主要知识点：<span>:steps()</span></summary>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>常见做法</summary>
+            <div class="example m-typing">
+                <h1>CSS is awesome!</h1>
+            </div>
+        </div>
+        <div class="code">
+            h1 {
+                width: 15ch; /* Width of text */
+                overflow: hidden;
+                white-space: nowrap;
+                border-right: .05em solid transparent;
+                animation: typing 6s steps(15),caret 1s steps(1) infinite;
+            }
+        </div>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>常见做法</summary>
+            <div class="example m-typing">
+                <h1 class="showTyping">使用js达到动态效果</h1>
+            </div>
+        </div>
+        <div class="code">
+
+        </div>
+    </section>
+    <script>
+        window.onload = function(){
+            function length(_content){
+                var _reg = /[^\x00-\xff]/g;
+                return function(_content){
+                    return (''+(_content||'')).replace(_reg,'**').length;
+                };
+            }
+            var _eTyping = document.getElementsByClassName('showTyping');
+            var arr = [].slice.call(_eTyping);
+            arr.forEach(function(item){
+                var len = length(item.textContent), s = item.style;
+                s.width = len + 'ch';
+                s.animationTimingFunction = "steps("+len+"),steps(1)";
+            });
+        }
+
+    </script>
+</body>
+</html>

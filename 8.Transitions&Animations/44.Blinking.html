@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>44.Blinking</title>
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<style type="text/css">
+@keyframes blink { 50% { color: transparent } }
+
+.m-blink .highlight { animation: 1s blink 3 steps(1); }
+</style>
+</head>
+<body class="g-doc">
+    <section class="m-knowledge">
+        <h2>44.Blinking</h2>
+        <summary>主要知识点：<span>:steps()</span></summary>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>常见做法</summary>
+            <div class="example m-blink">
+                <div class="highlight">blink</div>
+            </div>
+        </div>
+        <div class="code">
+            @keyframes blink { 50% { color: transparent } }
+            .highlight {
+                animation: 1s blink 3 steps(1); /* or step-end */
+            }
+        </div>
+    </section>
+</body>
+</html>

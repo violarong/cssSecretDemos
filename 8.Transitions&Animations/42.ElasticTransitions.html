@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>42.Elastic Transitions</title>
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<style type="text/css">
+@keyframes bounce {
+    60%, 80%, to {
+        transform: translateY(300px);
+    }
+    70% { transform: translateY(200px); }
+    90% { transform: translateY(250px); }
+}
+@keyframes bounce1 {
+    60%, 80%, to {
+        transform: translateY(300px);
+        animation-timing-function: ease-out;
+    }
+    70% { transform: translateY(200px); }
+    90% { transform: translateY(250px); }
+}
+@keyframes bounce2 {
+    60%, 80%, to {
+        transform: translateY(300px);
+        animation-timing-function: ease;
+    }
+    70% { transform: translateY(200px); }
+    90% { transform: translateY(250px); }
+}
+.m-bounce{}
+.m-bounce .ball{
+    width: 40px;
+    height:40px;
+    background: #f15b47;
+    display: inline-block;
+    margin-right:50px;
+}
+.m-bounce .bounce{
+    animation: bounce 3s infinite;
+}
+.m-bounce .bounce1{
+    animation: bounce1 3s infinite ease-in;
+}
+.m-bounce .bounce2{
+    animation: bounce2 3s infinite cubic-bezier(.1,.25,1,.25);
+}
+
+.m-trans{color:#fff;}
+.m-trans:hover .trans_itm{margin-left:calc(100% - 100px);}
+.m-trans .trans_itm{
+    width:100px;
+    height:40px;
+    line-height:40px;
+    margin:10px 0;
+    background-color:#36a8f4;
+    text-align:center;
+}
+.m-trans .ease{transition:all 4s ease;}
+.m-trans .easeIn{transition:all 4s ease-in;}
+.m-trans .easeOut{transition:all 4s ease-out;}
+.m-trans .easeInOut{transition:all 4s ease-in-out;}
+.m-trans .linear{transition:all 4s linear;}
+
+.m-tips{}
+.m-tips input{
+    height: 32px;
+    padding: 4px 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+.m-tips .callout{
+    display: block;
+    width: 300px;
+    background: #FF9800;
+    margin-top: 5px;
+    padding: 10px;
+    color: #fff;
+    line-height: 24px;
+}
+.m-tips input:not(:focus) + .callout {
+    transform: scale(0);
+}
+.m-tips .callout {
+    transition: .5s transform;
+    transform-origin: 1.4em -.4em;
+}
+@keyframes elastic-grow {
+    from { transform: scale(0); }
+    70% {
+        transform: scale(1.1);
+        animation-timing-function:
+            cubic-bezier(.1,.25,1,.25); /* Reverse ease */
+    }
+}
+.m-tips-1 input:not(:focus) + .callout { transform: scale(0); }
+.m-tips-1 input:focus + .callout { animation: elastic-grow .5s; }
+.m-tips-1 .callout { transform-origin: 1.4em -.4em; }
+
+.m-tips-2 input:not(:focus) + .callout { transform: scale(0); transition-timing-function: ease;}
+.m-tips-2 .callout {
+    transform-origin: 1.4em -.4em;
+    transition: .5s cubic-bezier(.25,.1,.3,1.5);
+}
+
+.m-tips-3 input:not(:focus) + .callout { transform: scale(0); transition: .25s transform;}
+.m-tips-3 .callout {
+    transform-origin: 1.4em -.4em;
+    transition: .5s cubic-bezier(.25,.1,.3,1.5) transform;
+}
+
+</style>
+</head>
+<body class="g-doc">
+    <section class="m-knowledge">
+        <h2>42.Elastic Transitions</h2>
+        <summary>主要知识点：<span>:first-child:nth-last-child</span></summary>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>5种timing function表现:ease,ease-in,ease-out,ease-in-out,linear</summary>
+            <div class="m-trans">
+                <div class="trans_itm ease">ease</div>
+                <div class="trans_itm easeIn">easeIn</div>
+                <div class="trans_itm easeOut">easeOut</div>
+                <div class="trans_itm easeInOut">easeInOut</div>
+                <div class="trans_itm linear">linear</div>
+            </div>
+        </div>
+        <div class="code">
+            .m-trans{color:#fff;}
+            .m-trans:hover .trans_itm{margin-left:calc(100% - 100px);}
+            .m-trans .trans_itm{
+                width:100px;
+                height:40px;
+                line-height:40px;
+                margin:10px 0;
+                background-color:#36a8f4;
+                text-align:center;
+            }
+            .m-trans .ease{transition:all 4s ease;}
+            .m-trans .easeIn{transition:all 4s ease-in;}
+            .m-trans .easeOut{transition:all 4s ease-out;}
+            .m-trans .easeInOut{transition:all 4s ease-in-out;}
+            .m-trans .linear{transition:all 4s linear;}
+        </div>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>bounce</summary>
+            <div class="m-bounce">
+                <div class="ball bounce"></div>
+                <div class="ball bounce1"></div>
+                <div class="ball bounce2"></div>
+            </div>
+        </div>
+        <div class="code">
+            @keyframes bounce {
+                60%, 80%, to {
+                    transform: translateY(300px);
+                    animation-timing-function: ease;
+                }
+                70% { transform: translateY(200px); }
+                90% { transform: translateY(250px); }
+            }
+            .ball {
+                /* Dimensions, colors, etc. */
+                width: 20px;
+                height: 20px;
+                background: red;
+                animation: bounce 3s infinite cubic-bezier(.1,.25,1,.25);
+            }
+
+        </div>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>输入框提示信息动画</summary>
+            <div class="example m-tips">
+                <label>
+                    Your username: <input id="username" />
+                    <span class="callout">Only letters, numbers,
+                    underscores (_) and hyphens (-) allowed!</span>
+                </label>
+            </div>
+        </div>
+        <div class="code">
+            .m-tips input:not(:focus) + .callout {
+                transform: scale(0);
+            }
+            .m-tips .callout {
+                transition: .5s transform;
+                transform-origin: 1.4em -.4em;
+            }
+        </div>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>输入框提示信息动画</summary>
+            <div class="example m-tips m-tips-1">
+                <label>
+                    Your username: <input id="username" />
+                    <span class="callout">Only letters, numbers,
+                    underscores (_) and hyphens (-) allowed!</span>
+                </label>
+            </div>
+        </div>
+        <div class="code">
+            .m-tips-1 input:not(:focus) + .callout { transform: scale(0); }
+            .m-tips-1 input:focus + .callout { animation: elastic-grow .5s; }
+            .m-tips-1 .callout { transform-origin: 1.4em -.4em; }
+        </div>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>输入框提示信息动画</summary>
+            <div class="example m-tips m-tips-2">
+                <label>
+                    Your username: <input id="username" />
+                    <span class="callout">Only letters, numbers,
+                    underscores (_) and hyphens (-) allowed!</span>
+                </label>
+            </div>
+        </div>
+        <div class="code">
+        .m-tips-2 input:not(:focus) + .callout { transform: scale(0); transition-timing-function: ease;}
+        .m-tips-2 .callout {
+            transform-origin: 1.4em -.4em;
+            transition: .5s cubic-bezier(.25,.1,.3,1.5);
+        }
+        </div>
+    </section>
+
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>输入框提示信息动画</summary>
+            <div class="example m-tips m-tips-3">
+                <label>
+                    Your username: <input id="username" />
+                    <span class="callout">Only letters, numbers,
+                    underscores (_) and hyphens (-) allowed!</span>
+                </label>
+            </div>
+        </div>
+        <div class="code">
+            .m-tips-3 input:not(:focus) + .callout { transform: scale(0); transition: .25s transform;}
+            .m-tips-3 .callout {
+                transform-origin: 1.4em -.4em;
+                transition: .5s cubic-bezier(.25,.1,.3,1.5) transform;
+            }
+        </div>
+    </section>
+</body>
+</html>

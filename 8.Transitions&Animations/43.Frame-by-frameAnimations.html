@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>43.Frame-by-frame animations</title>
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<style type="text/css">
+@keyframes loader {
+    to { background-position: -556px 0; }
+}
+.m-load .loader{
+    width: 73px; height: 73px;
+    background: url(./images/load.jpg) 0 0;
+    animation: loader 1s infinite steps(8);
+
+    /* Hide text */
+    text-indent: 200%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+</style>
+</head>
+<body class="g-doc">
+    <section class="m-knowledge">
+        <h2>43.Frame-by-frame animations</h2>
+        <summary>主要知识点：<span>steps()</span></summary>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>Frame-by-frame animations</summary>
+            <div class="example m-load">
+                <div class="loader">Loading...</div>
+            </div>
+        </div>
+        <div class="code">
+
+        </div>
+    </section>
+</body>
+</html>

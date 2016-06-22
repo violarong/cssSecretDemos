@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>40.Vertical centering</title>
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<style type="text/css">
+.m-center{
+    position:relative;
+    background-color:red;
+
+}
+.m-center main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -3em; /* 6/2 = 3 */
+    margin-left: -9em; /* 18/2 = 9 */
+    width: 18em;
+    height: 6em;
+    background-color:#ddd;
+}
+</style>
+</head>
+<body class="g-doc">
+    <section class="m-knowledge">
+        <h2>40.Vertical centering</h2>
+        <summary>主要知识点：<span>:first-child:nth-last-child</span></summary>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>常见做法</summary>
+            <div class="m-center">
+                <main>
+                    <h1>Am I centered yet?</h1>
+                    <p>Center me, please!</p>
+                </main>
+            </div>
+        </div>
+        <div class="code">
+
+        </div>
+    </section>
+</body>
+</html>

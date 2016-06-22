@@ -46,3 +46,8 @@ footer {
 ```
 
 [demo](http://violarong.github.io/cssSecretDemos/7.Structure&layout/39.FluidBackgroundFixedContent.html)
+
+##40.Vertical centering
+>主要知识点：calc()
+
+问题：垂直居中
