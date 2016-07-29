@@ -5,25 +5,46 @@
 <title>46.Smooth state animations</title>
 <link rel="stylesheet" type="text/css" href="../css/common.css">
 <style type="text/css">
-
+@keyframes panoramic {
+    to { background-position: 100% 0; }
+}
+.panoramic {
+    width: 300px; height: 300px;
+    background: url("images/bg-dq.png");
+    background-size: auto 100%;
+    animation: panoramic 10s linear infinite alternate;
+    animation-play-state: paused;
+}
+.panoramic:hover, .panoramic:focus {
+    animation-play-state: running;
+}
 </style>
 </head>
 <body class="g-doc">
     <section class="m-knowledge">
         <h2>46.Smooth state animations</h2>
-        <summary>主要知识点：<span>:steps()</span></summary>
+        <summary>主要知识点：<span>animation-play-state</span></summary>
     </section>
     <section class="m-code">
         <div class="livedemo">
             <summary>常见做法</summary>
-            <div class="example m-blink">
-                <div class="highlight">blink</div>
+            <div class="example">
+                <div class="panoramic"></div>
             </div>
         </div>
         <div class="code">
-            @keyframes blink { 50% { color: transparent } }
-            .highlight {
-                animation: 1s blink 3 steps(1); /* or step-end */
+            @keyframes panoramic {
+                to { background-position: 100% 0; }
+            }
+            .panoramic {
+                width: 300px; height: 300px;
+                background: url("images/bg-dq.png");
+                background-size: auto 100%;
+                animation: panoramic 10s linear infinite alternate;
+                animation-play-state: paused;
+            }
+            .panoramic:hover, .panoramic:focus {
+                animation-play-state: running;
             }
         </div>
     </section>

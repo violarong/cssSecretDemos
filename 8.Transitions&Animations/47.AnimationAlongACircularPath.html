@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>47.Animation along a circular path</title>
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<style type="text/css">
+@keyframes spin {
+    to { transform: rotate(1turn); }
+}
+@keyframes spin-reverse {
+    from { transform: rotate(1turn); }
+}
+
+@keyframes spin1 {
+    from {
+        transform:  rotate(0turn)
+                    translateY(-150px) translateY(50%)
+                    rotate(1turn);
+    }
+    to {transform:  rotate(1turn)
+                    translateY(-150px) translateY(50%)
+                    rotate(0turn);
+    }
+}
+
+
+.m-avatar{
+    width:300px;
+    height:300px;
+    border-radius: 50%;
+    background-color: #ddd;
+    position:relative;
+}
+.m-avatar .avatar {
+    position: absolute;
+    left: 50%;
+    margin-left: -44px;
+    animation: spin 4s 1 linear;
+    transform-origin: 50% 150px; /* 150px = path radius */
+}
+.m-avatar .avatar > img {
+    animation: inherit;
+    animation-name: spin-reverse;
+}
+.m-avatar .avatar1 {
+    position: absolute;
+    left: 50%;
+    margin-left: -44px;
+    animation: spin1 3s 1 linear;
+}
+
+</style>
+</head>
+<body class="g-doc">
+    <section class="m-knowledge">
+        <h2>47.Animation along a circular path</h2>
+        <summary>主要知识点：<span></span></summary>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>常见做法</summary>
+            <div class="example">
+                <div class="m-avatar">
+                    <div class="avatar">
+                        <img src="images/avatar01.png"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code">
+
+        </div>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>常见做法</summary>
+            <div class="example">
+                <div class="m-avatar">
+                    <img src="images/avatar01.png" class="avatar1"/>
+                </div>
+            </div>
+        </div>
+        <div class="code">
+
+        </div>
+    </section>
+</body>
+</html>

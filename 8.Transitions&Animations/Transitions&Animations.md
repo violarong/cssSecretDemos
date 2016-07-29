@@ -1,4 +1,4 @@
-##42.Elastic transitions
+## 42.Elastic transitions
 >主要知识点：timing-function:ease,ease-in,ease-out,ease-in-out,linear,cubic-bezier
 
 问题：让动画具有真实感。如球从高处掉下来的弹跳感。
@@ -10,7 +10,7 @@
 输入框提示信息
 
 
-##43.Frame-by-frame animations
+## 43.Frame-by-frame animations
 >主要知识点： steps()
 
 问题：有一些复杂的动画，不能使用css的transition，animation来实现，如卡通运动，复杂的进度指示器等。但这些动画可以使用基于图像的帧动画来完成。如何在web中灵活实现基于图像的帧动画，是该节要解决的问题。
@@ -19,9 +19,11 @@
 
 js可以通过改变background-position来实现。
 
-##44.Blinking
+## 44.Blinking
 
-##45.Typing animation
+## 45.Typing animation
 
-##46.Smooth state animations
+## 46.Smooth state animations
+并不是页面加载时动画就开始。一般是在用户交互后开始动画，比如hover或者点击的时候。
+
 
