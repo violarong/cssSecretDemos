@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>1.Translucent borders</title>
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<style type="text/css">
+.m-bclip p{
+    border:5px dotted #0d8abf;
+    margin:20px;
+    padding:20px;
+    background: #F8D575;
+}
+.m-bclip p.borderbox{background-clip: border-box;}
+.m-bclip p.paddingbox{background-clip: padding-box;}
+.m-bclip p.contentbox{background-clip: content-box;}
+
+.m-border{
+    background: url('./images/mountain.png');
+    width:600px;
+    height:320px;
+    padding-top:100px;
+    box-sizing:border-box;
+}
+.m-border p{
+    border: 10px solid hsla(0,0%,100%,.5);
+    background: white;
+    background-clip: padding-box;
+
+    max-width: 20em;
+    padding: 2em;
+    margin: 0 auto;
+    font: 100%/1.5 sans-serif;
+}
+
+
+</style>
+</head>
+<body class="g-doc">
+    <section class="m-knowledge">
+        <h2>1.Translucent borders</h2>
+        <summary>主要知识点：<span>RGBA/HSLA colors, background-clip</span></summary>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>background-clip</summary>
+            <div class="example">
+                <div class="m-bclip">
+                    <p class="borderbox">The yellow background extends behind the border.</p>
+                    <p class="paddingbox">The yellow background extends to the inside edge of the border.</p>
+                    <p class="contentbox">The yellow background extends only to the edge of the content box.</p>
+                </div>
+            </div>
+        </div>
+        <div class="code">
+            .m-bclip p{
+                border:5px dotted #0d8abf;
+                margin:20px;
+                padding:20px;
+                background: #F8D575;
+            }
+            .m-bclip p.borderbox{background-clip: border-box;}
+            .m-bclip p.paddingbox{background-clip: padding-box;}
+            .m-bclip p.contentbox{background-clip: content-box;}
+        </div>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>hsla+background-clip:半透明边框，边框下可看到背景图片</summary>
+            <div class="example">
+                <div class="m-border">
+                    <p>Can I haz semi- transparent borders? Pretty please?</p>
+                </div>
+            </div>
+        </div>
+        <div class="code">
+            .m-border{
+                background: url('./images/mountain.png');
+                width:600px;
+                height:320px;
+                padding-top:100px;
+                box-sizing:border-box;
+            }
+            .m-border p{
+                border: 10px solid hsla(0,0%,100%,.5);
+                background: white;
+                background-clip: padding-box;
+
+                max-width: 20em;
+                padding: 2em;
+                margin: 0 auto;
+                font: 100%/1.5 sans-serif;
+            }
+        </div>
+    </section>
+</body>
+</html>
