@@ -23,8 +23,11 @@ background-clip
 [表现形式](http://violarong.github.io/cssSecretDemos/2.Background&borders/1.TranslucentBorders.html)
 [兼容性](http://caniuse.com/#search=background-clip)
 
-## 1.Multiple borders
+## 2.Multiple borders
 >主要知识点：box-shadow
+
+## 3.Flexible background positioning
+>主要知识点：
 
 
 
