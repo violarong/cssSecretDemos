@@ -2,22 +2,63 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>9.FlexibleEllipses</title>
+<title>10.Parallelograms</title>
 <link rel="stylesheet" type="text/css" href="../css/common.css">
 <style type="text/css">
-
+.m-fe .fe{
+    width:200px;
+    height:50px;
+    line-height:50px;
+    text-align: center;
+    color:#fff;
+    font-size:20px;
+}
+.m-fe .fe-1{
+    background: #58a;
+    transform: skewX(-45deg);
+}
+.m-fe .fe-1>div{
+    transform: skewX(45deg);
+}
+.m-fe .fe-2{
+    position:relative;
+}
+.m-fe .fe-2:before{
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    background: #58a;
+    transform: skew(-45deg);
+}
 </style>
 </head>
 <body class="g-doc">
     <section class="m-knowledge">
-        <h2>9.FlexibleEllipses</h2>
+        <h2>10.Parallelograms</h2>
         <summary>主要知识点：<span>transforms</span></summary>
     </section>
     <section class="m-code">
         <div class="livedemo">
             <summary>平行四边形</summary>
             <div class="example">
-                <div class="m-">
+                <div class="m-fe">
+                    <div class="fe fe-1">
+                        <div>click me</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code">
+
+        </div>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>平行四边形</summary>
+            <div class="example">
+                <div class="m-fe">
+                    <div class="fe fe-2">click me</div>
                 </div>
             </div>
         </div>

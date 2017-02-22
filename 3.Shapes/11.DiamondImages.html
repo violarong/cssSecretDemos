@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>11.DiamondImages</title>
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<style type="text/css">
+.m-diamond .diamond{
+    width: 183px;
+    transform: rotate(45deg);
+    overflow: hidden;
+}
+.m-diamond .diamond>img{
+    max-width: 100%;
+    transform: rotate(-45deg) scale(1.42);
+}
+
+.m-diamond .diamond-1>img{
+    clip-path: polygon(50% 0, 100% 50%,
+                       50% 100%, 0 50%);
+    transition: 1s clip-path;
+}
+.m-diamond .diamond-1>img:hover{
+    clip-path: polygon(0 0, 100% 0,100% 100%, 0 100%);
+}
+
+</style>
+</head>
+<body class="g-doc">
+    <section class="m-knowledge">
+        <h2>11.DiamondImages</h2>
+        <summary>主要知识点：<span>transforms</span></summary>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>rotate scale</summary>
+            <div class="example">
+                <div class="m-diamond">
+                    <div class="diamond">
+                        <img src="./images/11_cat.jpg" alt="..." />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code">
+
+        </div>
+    </section>
+    <section class="m-code">
+        <div class="livedemo">
+            <summary>clip-path</summary>
+            <div class="example">
+                <div class="m-diamond">
+                    <div class="diamond-1">
+                        <img src="./images/11_cat.jpg" alt="..." />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code">
+
+        </div>
+    </section>
+</body>
+</html>
